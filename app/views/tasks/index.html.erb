@@ -1,10 +1,11 @@
 <h1> All Tasks </h1>
 
 <% @tasks.each do |task| %>
-  <tr>
-    <td><%= link_to task.title, task_path(task) %></td>
-    <td><%= task.details %></td>
-    <td><%= task.completed %></td>
-    <td><%= link_to 'Edit', edit_task_path(task) %></td>
-  </tr>
+  <ul>
+    <li><%=link_to task.title, task_path(task) %></li>
+    <p>Details: <%= task.details %></p>
+    <p>Done: <%= task.completed %></p>
+    <p><%= link_to 'Edit', edit_task_path(task) %></p>
+  </ul>
 <% end %>
+  <%= link_to 'Create a New Task', tasks_new_path %>
